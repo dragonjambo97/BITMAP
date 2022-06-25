@@ -9,6 +9,12 @@ struct FileHeader{
     uint32_t file_offset_to_pixel_array; 
 };
 
+struct Pixel{
+    uint8_t red;
+    uint8_t green;
+    uint8_t blue;
+};
+
 struct Bitmap{ 
     uint32_t dib_header_size; 
     uint32_t image_width;
