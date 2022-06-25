@@ -23,3 +23,16 @@ struct Bitmap{
     uint32_t important_color_count;
 };
 
+int main(void){
+
+    const char* filePath = "test.bmp";
+    FILE* bmp = fopen(filePath, "rb");
+    FileHeader fh;
+    Bitmap bih;
+ 
+    fread(&fh.signature,2,1,bmp);
+    fread(&fh.file_size,4,1,bmp);
+    fread(&fh.reserved,4,1,bmp);
+    fread(&fh.file_offset_to_pixel_array,4,1,bmp);
+    fread(&bih, 40, 1, bmp); 
+}
